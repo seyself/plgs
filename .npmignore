@@ -1,8 +1,10 @@
 .DS_Store
 *.log
-node_modules
 build
 .idea
 sandbox
 test/out-fixtures/*
 test/watch-*.txt
+src/
+.gitignore
+.npmignore

@@ -1,0 +1,17 @@
+{
+  "name": "plgs",
+  "version": "0.0.1",
+  "description": "Web Plugin Helper collection",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seyself/plgs"
+  },
+  "scripts": {
+    "build": "coffee -o ./ -bc ./src/**.coffee",
+    "watch": "coffee -o ./ -bw ./src/**.coffee",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "michiyasu@bascule.co.jp",
+  "license": "MIT"
+}
