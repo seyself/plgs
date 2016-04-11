@@ -17,9 +17,13 @@
     }
     element.setAttribute("href", (require('./fb-feed-url'))(options));
     element.setAttribute("target", "_blank");
-    return element.onclick = function() {
+    element.addEventListener('click', function() {
       require('./fb-feed-dialog')(options);
       return false;
-    };
+    });
+    return element.addEventListener('touchend', function() {
+      require('./fb-feed-dialog')(options);
+      return false;
+    });
   };
 })();

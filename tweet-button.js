@@ -12,9 +12,13 @@
     }
     element.setAttribute("href", (require('./tweet-url'))(options));
     element.setAttribute("target", "_blank");
-    return element.onclick = function() {
+    element.addEventListener('click', function() {
       require('./tweet-dialog')(options);
       return false;
-    };
+    });
+    return element.addEventListener('touchend', function() {
+      require('./tweet-dialog')(options);
+      return false;
+    });
   };
 })();

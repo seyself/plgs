@@ -4,9 +4,13 @@
     element = require('./_element')(element);
     element.setAttribute("href", (require('./line-url'))(options));
     element.setAttribute("target", "_blank");
-    return element.onclick = function() {
+    element.addEventListener('click', function() {
       require('./line-send')(options);
       return false;
-    };
+    });
+    return element.addEventListener('touchend', function() {
+      require('./line-send')(options);
+      return false;
+    });
   };
 })();

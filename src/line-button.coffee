@@ -4,6 +4,9 @@ do ->
 
     element.setAttribute("href", (require('./line-url'))(options))
     element.setAttribute("target", "_blank")
-    element.onclick = ()->
+    element.addEventListener 'click', ()->
+      require('./line-send')(options)
+      return false
+    element.addEventListener 'touchend', ()->
       require('./line-send')(options)
       return false

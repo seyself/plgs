@@ -15,6 +15,9 @@ do ->
 
     element.setAttribute("href", (require('./fb-feed-url'))(options))
     element.setAttribute("target", "_blank")
-    element.onclick = ()->
+    element.addEventListener 'click', ()->
+      require('./fb-feed-dialog')(options)
+      return false
+    element.addEventListener 'touchend', ()->
       require('./fb-feed-dialog')(options)
       return false

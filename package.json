@@ -1,6 +1,6 @@
 {
   "name": "plgs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Web Plugin Helper collection",
   "main": "index.js",
   "repository": {

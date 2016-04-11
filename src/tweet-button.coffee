@@ -10,6 +10,9 @@ do ->
 
     element.setAttribute("href", (require('./tweet-url'))(options))
     element.setAttribute("target", "_blank")
-    element.onclick = ()->
+    element.addEventListener 'click', ()->
+      require('./tweet-dialog')(options)
+      return false
+    element.addEventListener 'touchend', ()->
       require('./tweet-dialog')(options)
       return false
